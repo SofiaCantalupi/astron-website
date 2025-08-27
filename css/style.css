@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* color fondo #010206 
+
+Color sections gris #161618
+
+Color letras #FAFAFA
+
+*/
+
+:root {
+  /* Fonts */
+  --font-display: "Montserrat", sans-serif;
+  --font-body: "Roboto", sans-serif;
+
+  /* Colors */
+  --color-white: #FAFAFA;
+  --color-black: #010206;
+  --color-grey: #161618;
+
+  --foreground: var(--color-white);
+  --background: var(--color-black);
+
+  /* Layout */
+  --container-padding-x: 60px;
+  --container-padding-y: 60px;
+  --container-space-below: 20px;
+  /* usado para dar espacio debajo de elementos como eyebrown, h2 */
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/*  BUTTON */
+button {
+  all: unset;
+  text-align: center;
+  font-size: 12px;
+}
+
+.button {
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid;
+  margin-top: 20px;
+
+  &.button--primary {
+    color: var(--color-black);
+    background-color: var(--foreground);
+    border-color: var(--foreground);
+
+    &:hover {
+      color: var(--color-white);
+      background-color: var(--color-grey);
+      border-color: var(--color-grey);
+    }
+  }
+
+  &.button--secondary {
+    color: var(--color-white);
+    background-color: transparent;
+    border-color: var(--foreground);
+
+    &:hover {
+      color: var(--color-black);
+      background-color: var(--foreground);
+    }
+  }
+}
+
+
+/* ANCHOR */
+a {
+  text-decoration: none;
+  color: var(--foreground);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: rgb(198, 211, 5);
+  }
+}
+
+/* ul */
+ul {
+  list-style-type: none;
+}
+
+/*BODY*/
+
+body {
+  font-family: var(--font-body);
+  color: var(--foreground);
+  font-size: 14px;
+
+  background-color: var(--background);
+
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  /* mejora los textos en pantallas */
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 1;
+  font-family: var(--font-display);
+  margin-bottom: var(--container-space-below);
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 16px;
+  margin-bottom: calc(var(--container-space-below) * 0.5);
+}
+
+.logo svg {
+  width: 160px;
+  height: auto;
+  fill: var(--foreground);
+}
+
+
+.main-section {
+  background-color: #161618;
+}
+
+/* HEADER */
+
+.header {
+  padding: 20px var(--container-padding-x);
+  /* position: sticky;
+  top: 20px;
+  background-color: var(--background); */
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    .menu ul {
+      display: flex;
+
+      li {
+        margin: 0 24px;
+      }
+    }
+
+    .search svg {
+      width: 20px;
+      height: auto;
+    }
+  }
+}
+
+/* --------------- MAIN */
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 0 100px;
+  margin-bottom: 60px;
+
+  .hero__about-us {
+    max-width: 500px;
+    /* usado para que el texto no ocupe todo el conteiner */
+
+    h1 {
+      font-family: var(--font-display);
+      letter-spacing: 8px;
+      font-size: 70px;
+      font-weight: 100;
+    }
+
+    p {
+      margin-top: 10px;
+    }
+
+    .breadcrumb {
+      font-size: 12px;
+      margin-top: 20px;
+      font-family: var(--font-display);
+
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .chevron {
+          margin-top: 4px;
+        }
+
+      }
+    }
+  }
+
+  .hero__moon {
+    display: flex;
+
+    img {
+      width: 320px;
+      height: auto;
+      margin: auto;
+      /* es lo mismo que usar justify-content y align-items center en hero__moon. Se puede aplicar porque el padre es flex, si el padre NO es flex solo se puede centrar horizontalmente  */
+    }
+  }
+}
+
+/* Section Who whe are */
+
+.section__who-we-are {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 60px;
+  background-color: var(--color-grey);
+
+  .section__who-we-are__img img {
+    width: 440px;
+    margin-top: -120px;
+  }
+
+  .section__who-we-are__content {
+    max-width: 500px;
+
+    .description {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      display: flex;
+      gap: 80px;
+
+      &:first-of-type {
+        margin-bottom: 8px;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        svg {
+          width: 14px;
+          height: auto;
+        }
+      }
+    }
+
+  }
+}
+
+/* Section ABOUT US  */
+
+.section__about-us {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 60px;
+  align-items: center;
+
+
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px 40px;
+
+    div {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      dd {
+        font-size: 52px;
+      }
+
+      dt {
+        font-size: 14px;
+      }
+
+    }
+  }
+}
+
+/* Section Explore With Us */
+.prefooter {
+  background-image: url('/images/space.jpg');
+  background-position: center 85%;
+
+  .section__explore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    .button--primary {
+      a {
+        all: unset;
+      }
+    }
+  }
+}
+
+/* Footer */
+
+.footer {
+  font-size: 12px;
+  padding-bottom: 22px !important;
+
+  .principal-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    gap: 0px 30px;
+
+    .eyebrow {
+        font-weight: 500;
+      }
+
+
+    .logo {
+      p {
+        margin-top: 16px;
+      }
+    }
+
+    .social-media {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+
+      svg {
+        width: 24px;
+        fill: var(--background);
+      }
+    }
+
+    .our-store {
+      display: flex;
+      justify-content: center;
+      
+      ul {
+        li {
+          padding-top: 20px;
+        }
+      }
+    }
+
+    .get-in-touch {
+      div {
+        display: flex;
+        padding-top: 20px;
+        gap: 0 10px;
+
+        svg {
+          width: 14px;
+        }
+
+        p {
+          padding-top: 3px;
+        }
+      }
+    }
+  }
+
+  .copyright-section {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+}
+
+/* Clases utilitarias */
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.container {
+  padding: var(--container-padding-y) var(--container-padding-x);
+}
