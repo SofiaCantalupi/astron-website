@@ -17,6 +17,7 @@ Color letras #FAFAFA
   --color-white: #FAFAFA;
   --color-black: #010206;
   --color-grey: #161618;
+  --color-yellow: rgb(198, 211, 5);
 
   --foreground: var(--color-white);
   --background: var(--color-black);
@@ -79,6 +80,14 @@ button {
   }
 }
 
+/* INPUT */
+input {
+  all: unset;
+  background-color: var(--color-grey);
+  border: 1px solid var(--color-white);
+  border-radius: 6px;
+  padding: 2px 8px;
+}
 
 /* ANCHOR */
 a {
@@ -87,7 +96,7 @@ a {
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    color: rgb(198, 211, 5);
+    color: var(--color-yellow);
   }
 }
 
@@ -132,7 +141,7 @@ h2 {
 
 
 .main-section {
-  background-color: #161618;
+  background-color: var(--background);
 }
 
 /* HEADER */
@@ -161,6 +170,10 @@ h2 {
 
         summary {
           cursor: pointer;
+
+          &:hover {
+            color: var(--color-yellow);
+          }
         }
 
         ul {
@@ -176,9 +189,31 @@ h2 {
       }
     }
 
-    .search svg {
-      width: 20px;
-      height: auto;
+    .search {
+      position: relative;
+
+      summary {
+        cursor: pointer;
+        list-style-type: none;
+
+        &:hover {
+          color: var(--color-yellow);
+        }
+
+        svg {
+          width: 20px;
+          height: auto;
+        }
+      }
+
+      input {
+        position: absolute;
+        bottom: -8px; /* tanto bottom, left y transform funcionan en conjunto para posicionar el input respecto a search*/
+        left: 50%; /* el % es en base al elemento que lo contiene y tiene position relative */
+        transform: translateX(-50%) translateY(100%); /* el % es en base a si mismo */
+        width: 120px;
+      }
+
     }
   }
 }
