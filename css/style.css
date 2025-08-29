@@ -56,6 +56,10 @@ button {
   border: 1px solid;
   margin-top: 20px;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &.button--primary {
     color: var(--color-black);
     background-color: var(--foreground);
@@ -148,9 +152,13 @@ h2 {
 
 .header {
   padding: 20px var(--container-padding-x);
-  /* position: sticky;
+  position: sticky;
   top: 20px;
-  background-color: var(--background); */
+  background-color: rgba(0,0,0,0.10);
+  border-radius: 24px;
+  border: 3px solid var(--color-grey);
+  backdrop-filter: blur(12px);
+  transform: translateY(-24%);
 
   .nav {
     display: flex;
