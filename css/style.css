@@ -154,7 +154,7 @@ h2 {
   padding: 20px var(--container-padding-x);
   position: sticky;
   top: 20px;
-  background-color: rgba(0,0,0,0.10);
+  background-color: rgba(0, 0, 0, 0.10);
   border-radius: 24px;
   border: 3px solid var(--color-grey);
   backdrop-filter: blur(12px);
@@ -216,9 +216,12 @@ h2 {
 
       input {
         position: absolute;
-        bottom: -8px; /* tanto bottom, left y transform funcionan en conjunto para posicionar el input respecto a search*/
-        left: 50%; /* el % es en base al elemento que lo contiene y tiene position relative */
-        transform: translateX(-50%) translateY(100%); /* el % es en base a si mismo */
+        bottom: -8px;
+        /* tanto bottom, left y transform funcionan en conjunto para posicionar el input respecto a search*/
+        left: 50%;
+        /* el % es en base al elemento que lo contiene y tiene position relative */
+        transform: translateX(-50%) translateY(100%);
+        /* el % es en base a si mismo */
         width: 120px;
       }
 
@@ -272,12 +275,34 @@ h2 {
   .hero__moon {
     display: flex;
 
-    img {
-      width: 320px;
-      height: auto;
-      margin: auto;
-      /* es lo mismo que usar justify-content y align-items center en hero__moon. Se puede aplicar porque el padre es flex, si el padre NO es flex solo se puede centrar horizontalmente  */
+    .image-container {
+      position: relative;
+
+      .circle {
+        position: absolute;
+        inset: -4px; /*toma todo el tamano de la caja*/
+        border-radius: 50%;
+        border: 1px solid var(--color-white);
+
+        &:before  {
+          content: '';
+          position: absolute;
+          inset: 12px;
+          border-radius: 50%;
+          border: 1px solid var(--color-white);
+          opacity: 0.5;
+        }
+      }
+
+
+      img {
+        width: 320px;
+        height: auto;
+        margin: auto;
+        /* es lo mismo que usar justify-content y align-items center en hero__moon. Se puede aplicar porque el padre es flex, si el padre NO es flex solo se puede centrar horizontalmente  */
+      }
     }
+
   }
 }
 
