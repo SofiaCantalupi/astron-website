@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* color fondo #010206 
-
-Color sections gris #161618
-
-Color letras #FAFAFA
-
-*/
 
 :root {
   /* Fonts */
@@ -17,7 +10,7 @@ Color letras #FAFAFA
   --color-white: #FAFAFA;
   --color-black: #010206;
   --color-grey: #161618;
-  --color-yellow: rgb(198, 211, 5);
+  --color-yellow: rgb(176, 186, 23);
 
   --foreground: var(--color-white);
   --background: var(--color-black);
@@ -274,17 +267,20 @@ h2 {
 
   .hero__moon {
     display: flex;
+    align-items: center;
+    justify-content: center;
 
     .image-container {
       position: relative;
 
       .circle {
         position: absolute;
-        inset: -4px; /*toma todo el tamano de la caja*/
+        inset: -4px;
+        /*toma x el tamano de la caja*/
         border-radius: 50%;
         border: 1px solid var(--color-white);
 
-        &:before  {
+        &:before {
           content: '';
           position: absolute;
           inset: 12px;
@@ -296,11 +292,40 @@ h2 {
 
 
       img {
+        display: flex;
         width: 320px;
         height: auto;
         margin: auto;
         /* es lo mismo que usar justify-content y align-items center en hero__moon. Se puede aplicar porque el padre es flex, si el padre NO es flex solo se puede centrar horizontalmente  */
+
       }
+
+      .data {
+        position: absolute;
+        font-size: 10px;
+        transition: all 0.3s ease-in-out;
+
+        &.day {
+          top: 4%;
+          left: 6%;
+        }
+
+        &.km {
+          left: 85%;
+          top: 90%;
+        }
+
+        &.kmh {
+          top: 86%;
+        }
+      }
+
+      &:hover .data {
+        color: var(--color-yellow);
+        transform: scale(120%);
+      }
+
+      
     }
 
   }
