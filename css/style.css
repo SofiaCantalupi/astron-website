@@ -147,6 +147,7 @@ h2 {
   padding: 20px var(--container-padding-x);
   position: sticky;
   top: 20px;
+  z-index: 10;
   background-color: rgba(0, 0, 0, 0.10);
   border-radius: 24px;
   border: 3px solid var(--color-grey);
